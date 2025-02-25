@@ -36,66 +36,179 @@ const defineSkill = <S extends string>(
 
 export const items = [
 	defineSkill({
-		slug: 'js',
+		slug: 'django',
+		color: 'green',
+		description:
+			'Django is a high-level Python web framework that enables developers to build secure, scalable, and maintainable web applications rapidly. It follows the Model-View-Template (MVT) architectural pattern and emphasizes reusability, less code, and rapid development. <br>\n' +
+			'<br>' +
+			'Key Features of Django: <br>\n' +
+			'1. Batteries Included 🔋 – Comes with built-in tools for authentication, ORM, session management, and more.<br>\n' +
+			'2. Security Focused 🔒 – Protects against SQL injection, XSS, CSRF, and clickjacking by default.<br>\n' +
+			'3. Scalable & Versatile 🚀 – Powers small projects to large-scale applications like Instagram and Disqus.<br>\n' +
+			'4. ORM (Object-Relational Mapping) 📊 – Interacts with databases like PostgreSQL, MySQL, and SQLite using Python models.<br>\n' +
+			'5. Admin Interface 🛠️ – Auto-generates an admin panel for managing app data.<br>\n' +
+			'6. URL Routing 🔗 – Clean, readable URLs via Django’s URL dispatcher.<br>\n' +
+			'7. Template Engine 🎨 – Supports dynamic content rendering with Django’s templating system.<br>\n' +
+			'8. Built-in Authentication 🛡️ – User authentication, password hashing, and session handling are included.',
+		logo: Assets.Django,
+		name: 'Django',
+		category: 'library'
+	}),
+	defineSkill({
+		slug: 'flask',
+		color: 'black',
+		description:
+			'Flask is a micro web framework for Python that is simple, flexible, and lightweight. It is commonly used for building web applications and RESTful APIs. Unlike Django, Flask does not include built-in tools like an ORM or authentication system, making it minimalistic and modular—you can add only the components you need. <br>\n' +
+			'<br>' +
+			'Key Features of Flask:<br>\n' +
+			'1. Lightweight – Minimal overhead, easy to set up <br>\n' +
+			'2. Flexible – No strict project structure, customizable <br>\n' +
+			'3. Modular – Add only what you need (ORM, authentication, etc.) <br>\n' +
+			'4. Fast Development – Great for prototyping and small projects <br>\n' +
+			'5. Built-in Development Server – Includes debugging tools',
+		logo: Assets.Flask,
+		name: 'Flask',
+		category: 'library'
+	}),
+	defineSkill({
+		slug: 'mongodb',
+		color: 'green',
+		description:
+			'MongoDB is a NoSQL, document-oriented database designed for high performance, scalability, and flexibility. Unlike traditional relational databases (SQL), MongoDB stores data in JSON-like BSON (Binary JSON) documents, making it highly adaptable for applications with dynamic or unstructured data.\n<br>' +
+			'<br>' +
+			'Key Features of MongoDB:\n<br>' +
+			'1. Schema-less (Flexible Data Model) – No need for fixed table structures\n<br>' +
+			'2. Scalable & High Performance – Supports horizontal scaling with sharding\n<br>' +
+			'3. Document-Oriented – Stores data in JSON-like documents, making it easy to use\n' +
+			'4. Supports Indexing – Ensures fast query performance\n<br>' +
+			'5. Geo-Location & Full-Text Search – Ideal for real-time applications\n<br>' +
+			'6. Integrates with Modern Stacks – Works well with Node.js, Python, Django, Flask, Express.js, Java, etc.',
+		logo: Assets.MongoDB,
+		name: 'MongoDB',
+		category: 'db'
+	}),
+	defineSkill({
+		slug: 'postgres',
+		color: 'blue',
+		description:
+			'PostgreSQL (often called Postgres) is an open-source, relational database management system (RDBMS) known for its scalability, reliability, and advanced features. It is a strong competitor to MySQL and is widely used in enterprise applications, web development, and data science.<br>\n' +
+			'<br>\n' +
+			'Key Features of PostgreSQL:<br>\n' +
+			'1. ACID-Compliant – Ensures data integrity and reliability<br>\n' +
+			'2. SQL & NoSQL Support – Handles structured & semi-structured data<br>\n' +
+			'3. Extensible – Supports custom functions, data types, and procedural languages<br>\n' +
+			'4. Scalable & Performance-Oriented – Ideal for large-scale applications<br>\n' +
+			'5. Advanced Querying – Includes CTEs (Common Table Expressions), JSONB, and full-text search<br>\n' +
+			'6. Strong Security Features – Supports role-based access control (RBAC)<br>\n' +
+			'7. Open-Source & Free – No licensing fees, unlike Oracle or SQL Server',
+		logo: Assets.PostgreSQL,
+		name: 'PostgreSQL',
+		category: 'db'
+	}),
+	defineSkill({
+		slug: 'git',
+		color: 'red',
+		description:
+		'Git is a distributed version control system (VCS) that allows developers to track changes in code, collaborate efficiently, and manage projects seamlessly. It is widely used in software development, open-source projects, and DevOps workflows.<br>\n' +
+			'<br>\n' +
+			'Key Features of Git:<br>\n' +
+			'1. Version Control – Tracks changes in code and allows rollback to previous versions<br>\n' +
+			'2. Collaboration – Multiple developers can work on the same project without conflicts<br>\n' +
+			'3. Branching & Merging – Work on different features in isolated branches and merge them<br>\n' +
+			'4. Distributed System – Every developer has a local copy of the repository<br>\n' +
+			'5. Fast & Efficient – Optimized for speed and performance<br>\n' +
+			'6. Works with GitHub, GitLab, Bitbucket – Supports cloud-based collaboration',
+		logo: Assets.Git,
+		name: 'Git',
+		category: 'devops'
+	}),
+	defineSkill({
+		slug: 'aws',
 		color: 'yellow',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
-		logo: Assets.JavaScript,
-		name: 'Javascript',
-		category: 'pro-lang'
+			'Amazon Web Services (AWS) is the world’s largest cloud computing platform, providing on-demand computing, storage, networking, databases, AI/ML, security, and more. It allows businesses and developers to deploy applications globally without managing physical infrastructure.<br>\n' +
+			'<br>\n' +
+			'Key Features of AWS:<br>\n' +
+			'1. Scalability – Scale up/down resources as needed<br>\n' +
+			'2. Pay-As-You-Go Pricing – No upfront costs, only pay for what you use<br>\n' +
+			'3. Global Reach – 30+ regions and 100+ availability zones<br>\n' +
+			'4. Security & Compliance – Highly secure with encryption and compliance certifications<br>\n' +
+			'5. Machine Learning & AI – Ready-to-use AI/ML tools (AWS SageMaker, Rekognition)<br>\n' +
+			'6. Serverless Computing – Run applications without managing servers (AWS Lambda)<br>\n' +
+			'7. IoT & Big Data – Tools for IoT, analytics, and real-time data processing',
+		logo: Assets.AWS,
+		name: 'AWS',
+		category: 'devops'
 	}),
 	defineSkill({
-		slug: 'ts',
+		slug: 'docker',
 		color: 'blue',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
-		logo: Assets.TypeScript,
-		name: 'Typescript',
-		category: 'pro-lang'
+			'Docker is an open-source platform that enables developers to build, ship, and run applications inside lightweight, portable containers. These containers include everything needed to run an application—code, libraries, dependencies—ensuring that software runs consistently across different environments.<br>\n' +
+			'<br>\n' +
+			'Key Features of Docker:<br>\n' +
+			'1. Eliminates “Works on My Machine” Issues – Consistent environments across development, testing, and production<br>\n' +
+			'2. Lightweight & Fast – Containers share the OS kernel, unlike VMs (which require full OS)<br>\n' +
+			'3. Portable & Scalable – Run applications anywhere (laptops, cloud, servers)<br>\n' +
+			'4. Rapid Deployment – Start a container in milliseconds<br>\n' +
+			'5. Microservices Ready – Ideal for breaking applications into modular services<br>\n' +
+			'6. Works with Kubernetes – Orchestrate large-scale container deployments',
+		logo: Assets.Docker,
+		name: 'Docker',
+		category: 'devops'
 	}),
 	defineSkill({
-		slug: 'css',
+		slug: 'python',
 		color: 'blue',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
-		logo: Assets.CSS,
-		name: 'CSS',
-		category: 'markup-style'
+			'Python is a high-level, interpreted, general-purpose programming language known for its simplicity, readability, and versatility. It is widely used in web development, data science, AI/ML, automation, and more.<br>\n' +
+			'<br>\n' +
+			'Key Features of Python:<br>\n' +
+			'1. Easy to Learn & Readable – Uses simple, human-like syntax<br>\n' +
+			'2. Multi-Purpose – Used for web apps, AI, data science, automation, scripting, and more<br>\n' +
+			'3. Huge Community & Libraries – Thousands of pre-built libraries for fast development<br>\n' +
+			'4. Cross-Platform – Runs on Windows, macOS, Linux, and even mobile devices<br>\n' +
+			'5. Object-Oriented & Functional – Supports both programming paradigms<br>\n' +
+			'6. Great for Beginners & Experts – Used by students, startups, and big companies like Google, Netflix, NASA',
+		logo: Assets.Python,
+		name: 'Python',
+		category: 'lang'
 	}),
 	defineSkill({
-		slug: 'html',
-		color: 'orange',
+		slug: 'selenium',
+		color: 'blue',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
-		logo: Assets.HTML,
-		name: 'HTML',
-		category: 'markup-style'
-	}),
-	defineSkill({
-		slug: 'sass',
-		color: 'pink',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
-		logo: Assets.Sass,
-		name: 'Sass',
-		category: 'markup-style'
-	}),
-	defineSkill({
-		slug: 'reactjs',
-		color: 'cyan',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
-		logo: Assets.ReactJs,
-		name: 'React Js',
+			'Selenium is an open-source framework used for automating web browsers. It allows developers and testers to interact with web pages just like a human would—by clicking buttons, filling out forms, navigating through pages, and even scraping data.\n<br>' +
+			'<br>' +
+			'Key Features of Selenium: <br>\n' +
+			'1. Automates Browser Actions – Simulates user interactions (clicks, form submissions, scrolling, etc.)<br>\n' +
+			'2. Supports Multiple Browsers – Works with Chrome, Firefox, Edge, Safari<br>\n' +
+			'3. Cross-Platform – Runs on Windows, macOS, and Linux<br>\n' +
+			'4. Integrates with Python, Java, C# & More – Works with various programming languages<br>\n' +
+			'5. Useful for Web Scraping & Testing – Extracts data and tests web apps efficiently<br>\n' +
+			'6. Works with Headless Mode – Runs automation in the background (without UI)',
+		logo: Assets.Selenium,
+		name: 'Selenium',
 		category: 'library'
 	}),
 	defineSkill({
-		slug: 'svelte',
+		slug: 'java',
 		color: 'orange',
-		description: svelte,
-		logo: Assets.Svelte,
-		name: 'Svelte',
-		category: 'library'
+		description:
+			'Java is a high-level, object-oriented, platform-independent programming language. It is widely used for web applications, mobile apps (Android), enterprise software, and backend development.\n' +
+			'Java is compiled into bytecode, which runs on the Java Virtual Machine (JVM), making it write once, run anywhere (WORA).<br>\n' +
+			'<br>\n' +
+			'Key Features of Java:<br>\n' +
+			'1. Cross-Platform – Runs on Windows, macOS, Linux, Android<br>\n' +
+			'2. Object-Oriented – Supports encapsulation, inheritance, and polymorphism<br>\n' +
+			'3. Stable & Secure – Used by banks, governments, and big enterprises<br>\n' +
+			'4. Scalable & High-Performance – Used for large-scale systems, games, and real-time applications<br>\n' +
+			'5. Multi-Threading – Supports concurrent execution<br>\n' +
+			'6. Huge Ecosystem – Many frameworks (Spring, Hibernate) and libraries<br>\n' +
+			'7. Used for Android Development – Powers Android apps via Android SDK',
+		logo: Assets.Java,
+		name: 'Java',
+		category: 'lang'
 	})
 ] as const;
 
