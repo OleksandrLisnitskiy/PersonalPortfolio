@@ -209,6 +209,37 @@ export const items = [
 		logo: Assets.Java,
 		name: 'Java',
 		category: 'lang'
+	}),
+	defineSkill({
+		slug: 'fastapi',
+		color: 'green',
+		description:
+			'FastAPI is a modern, high-performance web framework for building RESTful APIs with Python 3.7+. It is based on Starlette for async web services and Pydantic for data validation.<br>\n' +
+			'<br>\n' +
+			'Key Features of FastAPI:<br>\n' +
+			'1. Blazing Fast – As fast as Node.js and Go (thanks to ASGI and async support)<br>\n' +
+			'2. Automatic Documentation – Generates Swagger UI & ReDoc<br>\n' +
+			'3. Built-in Data Validation – Uses Pydantic for automatic request validation<br>\n' +
+			'4. Asynchronous by Default – Supports async/await for high-performance APIs<br>\n' +
+			'5. Easy to Use & Learn – Simple, declarative syntax like Flask but more powerful<br>\n' +
+			'6. Dependency Injection – Clean, modular code structure',
+		logo: Assets.FastApi,
+		name: 'FastAPI',
+		category: 'library'
+	}),
+	defineSkill({
+		slug: 'xml',
+		color: 'green',
+		description:
+			'XML (Extensible Markup Language) in Android Studio is used to define the UI layout and resources of an Android app. It acts as a declarative language for structuring user interfaces, similar to HTML.<br>\n' +
+			'<br>\n' +
+			'Key Features of FastAPI:<br>\n' +
+			'1. Separation of UI & Logic – UI is written in XML, while logic is handled in Java/Kotlin.<br>\n' +
+			'2. Consistency – Helps maintain a structured and readable UI design<br>\n' +
+			'3. Flexibility – Works with different screen sizes and orientations easily.<br>\n',
+		logo: Assets.XML,
+		name: 'XML',
+		category: 'markup-style'
 	})
 ] as const;
 
