@@ -24,6 +24,8 @@ const Assets = {
 	MarvelFlip: a('marvel_flip.png'),
 	Dashboard: a('dashboard.png'),
 	TopScore : a('dashboard.png'),
+	LogoLAO: a('logolao.png'),
+	Silkronic: a('silkronic.png'),
 	Git: a('git.svg'),
 	Kafka: a('kafka.svg'),
 	Neo4j: a('neo4j.svg'),
