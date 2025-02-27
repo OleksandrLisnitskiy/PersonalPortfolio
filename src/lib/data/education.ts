@@ -5,26 +5,26 @@ export const items: Array<Education> = [
 	{
 		degree: 'Bachelor degree of Computer Science',
 		description: '',
-		location: 'Tunisia',
-		logo: Assets.Unknown,
-		name: '',
-		organization: 'ISTIC',
-		period: { from: new Date(2020, 0, 1), to: new Date(2022, 5, 1) },
+		location: 'Edmonton, AB, Canada',
+		logo: Assets.UofA,
+		name: 'University of Alberta',
+		organization: 'UofA',
+		period: { from: new Date(2021, 9, 1), to: new Date(2025, 4, 31) },
 		shortDescription: '',
-		slug: 'dummy-education-item',
-		subjects: ['C', 'Algorithm', 'Algebra', 'Python', 'C++', 'Java', 'English']
+		slug: 'uofa',
+		subjects: ['Algorithms and Data structures', 'Calculus', 'Python', 'C++', 'Java', 'Databases', 'Software Engineering', 'Computer Architecture', 'Assembly']
 	},
 	{
-		degree: 'PhD of Computer Science',
+		degree: 'High School',
 		description: '',
-		location: 'USA',
-		logo: Assets.Unknown,
-		name: '',
-		organization: 'MIT',
-		period: { from: new Date(2023, 0, 1) },
+		location: 'Ukraine',
+		logo: Assets.Garmonia,
+		name: 'Harmoni',
+		organization: 'Harmoni',
+		period: { from: new Date(2015, 9, 0), to: new Date(2021, 6, 0)},
 		shortDescription: '',
-		slug: 'dummy-education-item-2',
-		subjects: ['Assembly', 'Rust', 'Computer Architecture', 'Algorithms and Data structures']
+		slug: 'harmoni',
+		subjects: ['Programing', 'Calculus', 'Geometry', 'Algebra']
 	}
 ];
 

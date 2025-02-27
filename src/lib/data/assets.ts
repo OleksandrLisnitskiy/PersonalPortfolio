@@ -26,6 +26,8 @@ const Assets = {
 	TopScore : a('dashboard.png'),
 	LogoLAO: a('logolao.png'),
 	Silkronic: a('silkronic.png'),
+	UofA: a('uofa.png'),
+	Garmonia: a('garmonia.png'),
 	Git: a('git.svg'),
 	Kafka: a('kafka.svg'),
 	Neo4j: a('neo4j.svg'),
