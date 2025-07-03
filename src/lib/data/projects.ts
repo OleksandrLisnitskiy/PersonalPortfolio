@@ -4,6 +4,54 @@ import type { Project } from '../types';
 
 export const items: Array<Project> = [
 	{
+		slug: 'Booking Management System',
+		color: '#0a9e07',
+		description:
+			'<div style="font-family: Arial, sans-serif; background: #f9f9f9; border-radius: 10px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 800px; margin: 20px auto;">\n' +
+			'  <h2 style="color: #2c3e50;">🚀 Admin Dashboard & Booking Management System</h2>\n' +
+			'  <p style="font-size: 1.05rem; color: #555;">\n' +
+			'    This is a fully functional web application built with <strong>Flask</strong> 🐍 for managing client bookings, email campaigns, and admin operations for a service-based business.\n' +
+			'  </p>\n' +
+			'  <ul style="line-height: 1.8; font-size: 1rem; color: #444;">\n' +
+			'    <li>👥 <strong>Client & Booking Management</strong> – Admins can filter, view, and manage all bookings and user data through a responsive Bootstrap interface.</li>\n' +
+			'    <li>📩 <strong>Email Automation</strong> – Integrated with SendGrid API to send personalized promotional and transactional emails with respect to consent preferences.</li>\n' +
+			'    <li>📊 <strong>Visual Dashboard</strong> – Charts display real-time stats on user consent and payment statuses using Chart.js.</li>\n' +
+			'    <li>🐳 <strong>Dockerized for Deployment</strong> – Easily portable and deployable using Docker, enabling consistent environments and scalability.</li>\n' +
+			'  </ul>\n' +
+			'  <p style="margin-top: 20px; color: #777; font-size: 0.95rem;">✨ Clean design, efficient functionality, and modular code make this project easy to expand and maintain.</p>\n' +
+			'</div>',
+		shortDescription:
+			'A Flask-based web application for managing client bookings, sending promotional emails with SendGrid, and visualizing stats using Chart.js.',
+		links: [{ to: 'https://github.com/KennethJ1/BookingManagementSystem', label: 'GitHub' }],
+		logo: Assets.CampusGigs,
+		name: 'Booking Management System',
+		period: {
+			from: new Date(2025, 5, 1),
+			to: new Date(2025, 6, 6)
+		},
+		skills: getSkills('flask', 'python', 'docker', 'JS', 'SendGrid'),
+		type: 'Web Application',
+		screenshots: [
+			{
+				label: 'Dashboard',
+				src: '/logos/calendar_main.png'
+			},
+			{
+				label: 'Appointment Form',
+				src: '/logos/calendar_form.png'
+			},
+			{
+				label: 'Admin Panel',
+				src: '/logos/booking_admin.png'
+			},
+			{
+				label: 'DB Representation',
+				src: '/logos/booking_db.png'
+			}
+
+		]
+	},
+	{
 		slug: 'campusgigs',
 		color: '#0a9e07',
 		description:

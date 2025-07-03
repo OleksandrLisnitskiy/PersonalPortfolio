@@ -233,14 +233,45 @@ export const items = [
 		description:
 			'XML (Extensible Markup Language) in Android Studio is used to define the UI layout and resources of an Android app. It acts as a declarative language for structuring user interfaces, similar to HTML.<br>\n' +
 			'<br>\n' +
-			'Key Features of FastAPI:<br>\n' +
+			'Key Features of XML:<br>\n' +
 			'1. Separation of UI & Logic – UI is written in XML, while logic is handled in Java/Kotlin.<br>\n' +
 			'2. Consistency – Helps maintain a structured and readable UI design<br>\n' +
 			'3. Flexibility – Works with different screen sizes and orientations easily.<br>\n',
 		logo: Assets.XML,
 		name: 'XML',
 		category: 'markup-style'
-	})
+	}),
+	defineSkill({
+		slug: 'JS',
+		color: 'yellow',
+		description:
+			'JavaScript (JS) is a high-level, interpreted programming language widely used to add interactivity and dynamic behavior to websites. It runs directly in the browser and allows developers to create responsive, engaging user experiences.<br>\n' +
+			'<br>\n' +
+			'Key Features of JavaScript:<br>\n' +
+			'1. Client-Side Interactivity – Enables real-time updates, animations, and form validations without reloading the page.<br>\n' +
+			'2. Versatility – Works seamlessly with HTML and CSS, and is supported by all modern browsers.<br>\n' +
+			'3. Event-Driven – Responds to user actions like clicks, input, and keyboard events.<br>\n' +
+			'4. Expansive Ecosystem – Supports frameworks like React, Angular, and Vue for building complex applications.<br>',
+		logo: Assets.JavaScript,
+		name: 'JS',
+		category: 'pro-lang'
+	}),
+	defineSkill({
+		slug: 'SendGrid',
+		color: 'blue',
+		description:
+			'SendGrid is a cloud-based email delivery service that enables businesses to send transactional and marketing emails reliably at scale. It provides APIs and SMTP integration to simplify email sending from applications.<br>\n' +
+			'<br>\n' +
+			'Key Features of SendGrid:<br>\n' +
+			'1. Reliable Delivery – Ensures high deliverability rates with built-in tools to avoid spam filters.<br>\n' +
+			'2. Scalable Infrastructure – Handles email sending for small apps to enterprise-level systems.<br>\n' +
+			'3. Analytics & Reporting – Tracks email performance with detailed stats like open rates, clicks, and bounces.<br>\n' +
+			'4. API & SMTP Support – Offers flexible integration options using RESTful APIs or traditional SMTP.<br>',
+		logo: Assets.Sendgrid,
+		name: 'SendGrid',
+		category: 'library'
+	}),
+
 ] as const;
 
 export const title = 'Skills';

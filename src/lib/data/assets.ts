@@ -20,6 +20,7 @@ const Assets = {
 	Go: a('go.svg'),
 	Empty: a('fastapi.svg'),
 	Saprgram: a('saprgram.png'),
+	Sendgrid: a('sendgrid.png'),
 	XML: a('xml.png'),
 	MarvelFlip: a('marvel_flip.png'),
 	Dashboard: a('dashboard.png'),
