@@ -16,6 +16,7 @@ const Assets = {
 	Django: a('django.svg'),
 	FastApi: a('fastapi.png'),
 	CampusGigs: a('campusgigs.png'),
+	Calendar: a('calendar.png'),
 	Flask: a('flask.svg'),
 	Go: a('go.svg'),
 	Empty: a('fastapi.svg'),

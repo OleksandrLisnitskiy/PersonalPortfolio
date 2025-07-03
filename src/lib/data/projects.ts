@@ -23,7 +23,7 @@ export const items: Array<Project> = [
 		shortDescription:
 			'A Flask-based web application for managing client bookings, sending promotional emails with SendGrid, and visualizing stats using Chart.js.',
 		links: [{ to: 'https://github.com/KennethJ1/BookingManagementSystem', label: 'GitHub' }],
-		logo: Assets.CampusGigs,
+		logo: Assets.Calendar,
 		name: 'Booking Management System',
 		period: {
 			from: new Date(2025, 5, 1),
@@ -34,19 +34,19 @@ export const items: Array<Project> = [
 		screenshots: [
 			{
 				label: 'Dashboard',
-				src: '/logos/calendar_main.png'
+				src: '../../../static/logos/calendar_main.png'
 			},
 			{
 				label: 'Appointment Form',
-				src: '/logos/calendar_form.png'
+				src: '../../../static/logos/calendar_form.png'
 			},
 			{
 				label: 'Admin Panel',
-				src: '/logos/booking_admin.png'
+				src: '../../../static/logos/booking_admin.png'
 			},
 			{
 				label: 'DB Representation',
-				src: '/logos/booking_db.png'
+				src: '../../../static/logos/booking_db.png'
 			}
 
 		]
