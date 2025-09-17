@@ -54,7 +54,7 @@ export const items: Array<Experience> = [
 		name: 'Software Developer',
 		color: 'red',
 		links: [],
-		logo: "",
+		logo: Assets.Empty,
 		shortDescription: 'Building CRM systems with Django, React/Next.js, PostgreSQL, Celery, Redis, AWS (S3, SQS) and Dokku.'
 	},
 	{
