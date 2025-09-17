@@ -4,58 +4,58 @@ import { ContractType, type Experience } from '../types';
 
 export const items: Array<Experience> = [
 	{
-		slug: 'backend-developer',
-		company: 'Silktronic',
+		slug: 'software-developer',
+		company: 'Private Contract',
 		description:
-			'<h2>🖥️ Backend Developer – Web & Database Solutions 🚀</h2>' +
-			'' +
-			'    <p>' +
-			'        As a <strong>Backend Developer</strong>, I worked on building and optimizing server-side applications, ensuring ' +
-			'        <strong>efficient data management, API integrations, and seamless application performance</strong>.' +
-			'    </p>' +
-			'' +
-			'    <h3>🔧 Key Responsibilities:</h3>' +
-			'    <ul>' +
-			'        <li>⚙️ <strong>Developed backend logic</strong> and APIs for web applications using Flask and Django.</li>' +
-			'        <li>🗄️ <strong>Designed and managed databases</strong> for efficient data storage and retrieval.</li>' +
-			'        <li>🔄 <strong>Integrated third-party services</strong> and APIs for extended functionality.</li>' +
-			'        <li>🚀 <strong>Optimized server performance</strong> by improving query efficiency and caching strategies.</li>' +
-			'        <li>🛠️ <strong>Implemented authentication & security measures</strong> to protect user data.</li>' +
-			'    </ul>' +
-			'' +
-			'    <h3>🛠️ Technologies & Tools Used:</h3>' +
-			'    <ul>' +
-			'        <li>🐍 <strong>Programming:</strong> Python</li>' +
-			'        <li>🌐 <strong>Web Frameworks:</strong> Flask, Django</li>' +
-			'        <li>🗄️ <strong>Databases:</strong> PostgreSQL, MySQL, MongoDB</li>' +
-			'        <li>🔗 <strong>API Development:</strong> REST, GraphQL</li>' +
-			'        <li>🔧 <strong>Server Management:</strong> Docker, AWS, Nginx</li>' +
-			'        <li>📂 <strong>Version Control:</strong> Git, GitHub</li>' +
-			'    </ul>' +
-			'' +
-			'    <h3>🌟 Impact & Achievements:</h3>' +
-			'    <ul>' +
-			'        <li>✅ <strong>Improved database performance</strong> by optimizing queries and indexing.</li>' +
-			'        <li>📈 <strong>Developed scalable APIs</strong> that handled high traffic efficiently.</li>' +
-			'        <li>🔒 <strong>Enhanced application security</strong> by implementing authentication and encryption techniques.</li>' +
-			'        <li>💡 <strong>Streamlined backend architecture</strong> for better maintainability and scalability.</li>' +
-			'    </ul>' +
-			'' +
-			'    <p>' +
-			'        Through my expertise in <strong>backend development, database management, and web frameworks</strong>, ' +
-			'        I built robust, scalable, and efficient applications that powered seamless user experiences. 🚀' +
-			'    </p>'
+		'<h2>🖥️ Software Developer – CRM Systems & Web Platforms 🚀</h2>\n' +
+			'\n' +
+			'<p>\n' +
+			'    As a <strong>Software Developer</strong>, I design and build <strong>custom CRM systems</strong> and booking platforms \n' +
+			'    using <strong>Django, React, and Next.js</strong>. My work focuses on <strong>scalable backend architectures, \n' +
+			'    cloud integrations, and seamless user/admin experiences</strong>.\n' +
+			'</p>\n' +
+			'\n' +
+			'<h3>🔧 Key Responsibilities:</h3>\n' +
+			'<ul>\n' +
+			'    <li>⚙️ <strong>Developed full-stack CRM systems</strong> with Django REST Framework, React/Next.js frontends, and PostgreSQL backends.</li>\n' +
+			'    <li>🗄️ <strong>Implemented asynchronous processing</strong> with Celery, Redis, and AWS SQS for notifications, scheduling, and background tasks.</li>\n' +
+			'    <li>🔄 <strong>Integrated third-party APIs</strong> including Stripe (payments), Twilio (SMS), SendGrid (email), and AWS S3 (file storage).</li>\n' +
+			'    <li>🚀 <strong>Built role-based dashboards</strong> with advanced booking/calendar management in Django Admin and React UI.</li>\n' +
+			'    <li>🛠️ <strong>Deployed and scaled applications</strong> using Dokku, Nginx, Docker, and AWS cloud infrastructure.</li>\n' +
+			'</ul>\n' +
+			'\n' +
+			'<h3>🛠️ Technologies & Tools Used:</h3>\n' +
+			'<ul>\n' +
+			'    <li>🐍 <strong>Backend:</strong> Python (Django, Django REST, Celery, Redis, PostgreSQL)</li>\n' +
+			'    <li>⚛️ <strong>Frontend:</strong> React, Next.js, JavaScript, TailwindCSS</li>\n' +
+			'    <li>☁️ <strong>Cloud & DevOps:</strong> AWS (S3, SQS), Dokku, Docker, Nginx</li>\n' +
+			'    <li>🔗 <strong>Integrations:</strong> Stripe, Twilio, SendGrid</li>\n' +
+			'    <li>📂 <strong>Version Control:</strong> Git, GitHub</li>\n' +
+			'</ul>\n' +
+			'\n' +
+			'<h3>🌟 Impact & Achievements:</h3>\n' +
+			'<ul>\n' +
+			'    <li>✅ <strong>Delivered multiple CRM systems</strong> tailored for booking, client management, and payment automation.</li>\n' +
+			'    <li>📈 <strong>Improved performance & scalability</strong> via async task queues, optimized queries, and caching.</li>\n' +
+			'    <li>🔒 <strong>Enhanced security & compliance</strong> through RBAC, validation, and secure API integrations.</li>\n' +
+			'    <li>💡 <strong>Streamlined workflows</strong> for businesses by automating scheduling, invoicing, and notifications.</li>\n' +
+			'</ul>\n' +
+			'\n' +
+			'<p>\n' +
+			'    By combining <strong>backend engineering, frontend development, and cloud deployment</strong>, \n' +
+			'    I deliver scalable CRM solutions that power modern businesses end-to-end. 🚀\n' +
+			'</p>'
 		,
-		contract: ContractType.PartTime,
-		type: 'Back-End Development',
+		contract: ContractType.FullTime,
+		type: 'Software Development',
 		location: 'Remote',
-		period: { from: new Date(2023, 10, 0), to: new Date(Date.now()) },
+		period: { from: new Date(2025, 7, 0), to: new Date(Date.now()) },
 		skills: getSkills('flask', 'mongodb', 'python', 'selenium', 'aws'),
-		name: 'Back-End Developer',
+		name: 'Software Developer',
 		color: 'red',
 		links: [],
-		logo: Assets.Silkronic,
-		shortDescription: 'Working with databases and Web Frameworks like Flask and Django'
+		logo: "",
+		shortDescription: 'Building CRM systems with Django, React/Next.js, PostgreSQL, Celery, Redis, AWS (S3, SQS) and Dokku.'
 	},
 	{
 		slug: 'mla-assistant',
