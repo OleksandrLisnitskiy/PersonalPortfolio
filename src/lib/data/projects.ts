@@ -34,19 +34,19 @@ export const items: Array<Project> = [
 		screenshots: [
 			{
 				label: 'Dashboard',
-				src: '../../../static/logos/calendar_main.png'
+				src: '/logos/calendar_main.png'
 			},
 			{
 				label: 'Appointment Form',
-				src: '../../../static/logos/calendar_form.png'
+				src: '/logos/calendar_form.png'
 			},
 			{
 				label: 'Admin Panel',
-				src: '../../../static/logos/booking_admin.png'
+				src: '/logos/booking_admin.png'
 			},
 			{
 				label: 'DB Representation',
-				src: '../../../static/logos/booking_db.png'
+				src: '/logos/booking_db.png'
 			}
 
 		]

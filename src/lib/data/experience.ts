@@ -4,58 +4,117 @@ import { ContractType, type Experience } from '../types';
 
 export const items: Array<Experience> = [
 	{
-		slug: 'software-developer',
-		company: 'Private Contract',
+		slug: 'full-stack-rentino',
+		company: 'Rentino',
 		description:
-		'<h2>🖥️ Software Developer – CRM Systems & Web Platforms 🚀</h2>\n' +
+			'<h2>Full-Stack Developer – Peer-to-Peer Rental Marketplace</h2>\n' +
 			'\n' +
 			'<p>\n' +
-			'    As a <strong>Software Developer</strong>, I design and build <strong>custom CRM systems</strong> and booking platforms \n' +
-			'    using <strong>Django, React, and Next.js</strong>. My work focuses on <strong>scalable backend architectures, \n' +
-			'    cloud integrations, and seamless user/admin experiences</strong>.\n' +
+			'    <a href="https://rentino.org" target="_blank" rel="noopener noreferrer"><strong>Rentino</strong></a> is a peer-to-peer rental marketplace connecting owners and renters.\n' +
+			'    I designed and built the full backend and production infrastructure from the ground up using <strong>Django/DRF</strong>,\n' +
+			'    deployed on AWS across a multi-node architecture with Cloudflare for TLS and CDN.\n' +
 			'</p>\n' +
 			'\n' +
-			'<h3>🔧 Key Responsibilities:</h3>\n' +
+			'<h3>Backend & API</h3>\n' +
 			'<ul>\n' +
-			'    <li>⚙️ <strong>Developed full-stack CRM systems</strong> with Django REST Framework, React/Next.js frontends, and PostgreSQL backends.</li>\n' +
-			'    <li>🗄️ <strong>Implemented asynchronous processing</strong> with Celery, Redis, and AWS SQS for notifications, scheduling, and background tasks.</li>\n' +
-			'    <li>🔄 <strong>Integrated third-party APIs</strong> including Stripe (payments), Twilio (SMS), SendGrid (email), and AWS S3 (file storage).</li>\n' +
-			'    <li>🚀 <strong>Built role-based dashboards</strong> with advanced booking/calendar management in Django Admin and React UI.</li>\n' +
-			'    <li>🛠️ <strong>Deployed and scaled applications</strong> using Dokku, Nginx, Docker, and AWS cloud infrastructure.</li>\n' +
+			'    <li>Built the marketplace API with <strong>Django REST Framework</strong>, enforcing clean separation between API, business logic, and persistence layers.</li>\n' +
+			'    <li>Designed <strong>PostgreSQL schemas</strong> with atomic transactional writes, eliminating race conditions and partial update failures across bookings and payments.</li>\n' +
+			'    <li>Implemented <strong>least-privilege database roles</strong> (<code>rentino_owner</code> for migrations, <code>rentino_app</code> for runtime) with RBAC and role-based access control throughout the API.</li>\n' +
+			'    <li>Integrated <strong>Stripe payments and webhooks</strong>, <strong>Twilio SMS</strong>, and <strong>SendGrid email</strong> notifications for end-to-end booking and payment flows.</li>\n' +
+			'    <li>Built a <strong>presigned URL upload system</strong> with dual Cloudflare R2 buckets — public bucket for listing photos, private bucket for sensitive documents with short-lived presigned URLs.</li>\n' +
+			'    <li>Implemented <strong>PgBouncer</strong> connection pooling (transaction mode) to efficiently manage database connections under load.</li>\n' +
 			'</ul>\n' +
 			'\n' +
-			'<h3>🛠️ Technologies & Tools Used:</h3>\n' +
+			'<h3>Async & Background Jobs</h3>\n' +
 			'<ul>\n' +
-			'    <li>🐍 <strong>Backend:</strong> Python (Django, Django REST, Celery, Redis, PostgreSQL)</li>\n' +
-			'    <li>⚛️ <strong>Frontend:</strong> React, Next.js, JavaScript, TailwindCSS</li>\n' +
-			'    <li>☁️ <strong>Cloud & DevOps:</strong> AWS (S3, SQS), Dokku, Docker, Nginx</li>\n' +
-			'    <li>🔗 <strong>Integrations:</strong> Stripe, Twilio, SendGrid</li>\n' +
-			'    <li>📂 <strong>Version Control:</strong> Git, GitHub</li>\n' +
+			'    <li>Integrated <strong>Celery workers and Celery Beat scheduler</strong> to offload long-running tasks from the request path, reducing average API response time by <strong>30%</strong>.</li>\n' +
+			'    <li>Used <strong>Redis</strong> as both the Celery broker and Django cache backend for fast in-memory lookups and retry-safe task automation.</li>\n' +
+			'    <li>Built a <strong>dynamic sitemap generation service</strong> running on a cron schedule inside Docker, writing sitemaps to a shared nginx volume for SEO.</li>\n' +
 			'</ul>\n' +
 			'\n' +
-			'<h3>🌟 Impact & Achievements:</h3>\n' +
+			'<h3>Infrastructure & DevOps</h3>\n' +
 			'<ul>\n' +
-			'    <li>✅ <strong>Delivered multiple CRM systems</strong> tailored for booking, client management, and payment automation.</li>\n' +
-			'    <li>📈 <strong>Improved performance & scalability</strong> via async task queues, optimized queries, and caching.</li>\n' +
-			'    <li>🔒 <strong>Enhanced security & compliance</strong> through RBAC, validation, and secure API integrations.</li>\n' +
-			'    <li>💡 <strong>Streamlined workflows</strong> for businesses by automating scheduling, invoicing, and notifications.</li>\n' +
+			'    <li>Architected a <strong>multi-node AWS deployment</strong>: dedicated EC2 instances for the app (nginx + Gunicorn + Celery), database (Postgres 16 on EBS 100GB gp3), and Redis; ClamAV on ECS Fargate for file scanning.</li>\n' +
+			'    <li>Configured <strong>Cloudflare</strong> (Full Strict TLS, origin certificates, DNS proxying) for CDN, DDoS protection, and zero-downtime SSL.</li>\n' +
+			'    <li>Set up <strong>CI/CD pipelines</strong> via GitHub Actions: builds Docker images, pushes to GHCR, and deploys to production by SSHing into the EC2 app server on every merge to the deploy branch.</li>\n' +
+			'    <li>Implemented <strong>nightly pg_dump backups</strong> with 14-day retention stored on the DB EC2, with structured logging and cron scheduling.</li>\n' +
+			'    <li>Applied strict <strong>security group rules</strong> — app server is the only host with access to the DB (5432), Redis (6379), and ClamAV (3310) nodes.</li>\n' +
+			'    <li>Used <strong>envsubst-rendered config templates</strong> for PgBouncer to safely inject secrets at deploy time without committing them to git.</li>\n' +
 			'</ul>\n' +
 			'\n' +
-			'<p>\n' +
-			'    By combining <strong>backend engineering, frontend development, and cloud deployment</strong>, \n' +
-			'    I deliver scalable CRM solutions that power modern businesses end-to-end. 🚀\n' +
-			'</p>'
-		,
+			'<h3>Frontend & SEO</h3>\n' +
+			'<ul>\n' +
+			'    <li>Shipped frontend static assets inside Docker images with <strong>pre-rendering and sitemap generation</strong> baked into the build for production SEO.</li>\n' +
+			'    <li>Configured <strong>nginx</strong> for TLS termination, static hosting, reverse proxying to the Django API, and long-term cache headers for hashed assets.</li>\n' +
+			'</ul>\n' +
+			'\n' +
+			'<h3>Impact</h3>\n' +
+			'<ul>\n' +
+			'    <li>Reduced average API response time by <strong>30%</strong> through Celery task offloading and Redis caching.</li>\n' +
+			'    <li>Eliminated race conditions across all booking and payment operations via atomic PostgreSQL transactions.</li>\n' +
+			'    <li>Delivered a fully observable production system with structured logging, CI/CD, nightly backups, and multi-environment deployments.</li>\n' +
+			'</ul>',
 		contract: ContractType.FullTime,
 		type: 'Software Development',
 		location: 'Remote',
-		period: { from: new Date(2025, 7, 0), to: new Date(Date.now()) },
-		skills: getSkills('flask', 'mongodb', 'python', 'selenium', 'aws'),
+		period: { from: new Date(2025, 8, 1), to: new Date(Date.now()) },
+		skills: getSkills('django', 'python', 'postgres', 'celery', 'redis', 'docker', 'aws', 'stripe', 'twilio', 'SendGrid', 'git'),
+		name: 'Full-Stack Developer',
+		color: 'blue',
+		links: [{ to: 'https://rentino.org', label: 'Rentino' }],
+		logo: Assets.Rentino,
+		shortDescription: 'Building a peer-to-peer rental marketplace backend with Django/DRF, PostgreSQL, Celery, Redis, and Docker.',
+		screenshots: [
+			{ src: '/logos/Rentino_1.PNG', label: 'Homepage' },
+			{ src: '/logos/Rentino_2.PNG', label: 'Listings' },
+			{ src: '/logos/Rentino_3.PNG', label: 'Booking' },
+			{ src: '/logos/Rentino_4.PNG', label: 'Dashboard' },
+		]
+	},
+	{
+		slug: 'software-developer',
+		company: 'Confidential Client (B2B SaaS)',
+		description:
+			'<h2>Software Developer – B2B SaaS Platform</h2>\n' +
+			'\n' +
+			'<p>\n' +
+			'    As a <strong>Software Developer</strong> on a B2B SaaS product, I delivered features across multiple release cycles,\n' +
+			'    focusing on UI quality, scheduling, payments, and long-term bug reduction.\n' +
+			'</p>\n' +
+			'\n' +
+			'<h3>Key Responsibilities:</h3>\n' +
+			'<ul>\n' +
+			'    <li><strong>Translated product requirements into shippable features</strong> across 3+ release cycles, improving UI consistency and reducing post-release bug reports by an estimated 30% through careful pre-release testing.</li>\n' +
+			'    <li><strong>Built interactive scheduling views</strong> with AJAX-style updates and client-side caching, reducing visible UI stalls and cutting average calendar load interactions by over 50%.</li>\n' +
+			'    <li><strong>Diagnosed and resolved recurring data and UI bugs</strong> through structured Git workflows and automated checks, reducing repeat issue reports by approximately 40% over 3 months of active maintenance.</li>\n' +
+			'    <li><strong>Integrated Stripe payments and webhooks</strong> alongside Twilio SMS and SendGrid email notifications, increasing payment confirmation reliability and on-time attendance rate by 25% within the first month.</li>\n' +
+			'</ul>\n' +
+			'\n' +
+			'<h3>Technologies Used:</h3>\n' +
+			'<ul>\n' +
+			'    <li><strong>Backend:</strong> Python, Flask, Django</li>\n' +
+			'    <li><strong>Frontend:</strong> JavaScript, HTML, CSS</li>\n' +
+			'    <li><strong>Integrations:</strong> Stripe, Twilio, SendGrid</li>\n' +
+			'    <li><strong>DevOps:</strong> Docker, Git, AWS</li>\n' +
+			'</ul>\n' +
+			'\n' +
+			'<h3>Impact:</h3>\n' +
+			'<ul>\n' +
+			'    <li>Reduced post-release bug reports by an estimated <strong>30%</strong> through careful pre-release testing.</li>\n' +
+			'    <li>Cut average calendar load interactions by over <strong>50%</strong> with AJAX-style updates and client-side caching.</li>\n' +
+			'    <li>Reduced repeat issue reports by approximately <strong>40%</strong> over 3 months of active maintenance.</li>\n' +
+			'    <li>Increased payment confirmation reliability and on-time attendance rate by <strong>25%</strong> within the first month.</li>\n' +
+			'</ul>',
+		contract: ContractType.FullTime,
+		type: 'Software Development',
+		location: 'Remote',
+		period: { from: new Date(2025, 6, 1), to: new Date(Date.now()) },
+		skills: getSkills('flask', 'python', 'stripe', 'twilio', 'SendGrid', 'docker', 'aws', 'git'),
 		name: 'Software Developer',
 		color: 'red',
 		links: [],
 		logo: Assets.Empty,
-		shortDescription: 'Building CRM systems with Django, React/Next.js, PostgreSQL, Celery, Redis, AWS (S3, SQS) and Dokku.'
+		shortDescription: 'Delivering features, scheduling views, and payment integrations (Stripe, Twilio, SendGrid) for a B2B SaaS platform.'
 	},
 	{
 		slug: 'mla-assistant',

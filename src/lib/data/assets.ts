@@ -85,6 +85,9 @@ const Assets = {
 	Unocss: a('unocss.svg'),
 	Ruvy: a('ruvy.svg'),
 	Postcss: a('postcss.svg'),
+	Stripe: a('stripe.svg'),
+	Twilio: a('twilio.svg'),
+	Rentino: a('logo-1024-insta.png'),
 };
 
 export default Assets;

@@ -1,3 +1,3 @@
-export const data = 'https://drive.google.com/file/d/1562U9TPaRQL5-fJNxZUaKGnV-YOMncXu/view?usp=sharing';
+export const data = '/Oleksandr_Lisnytskyi_CV_IT.pdf';
 
 export const title = 'Resume';

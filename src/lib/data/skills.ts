@@ -271,6 +271,86 @@ export const items = [
 		name: 'SendGrid',
 		category: 'library'
 	}),
+	defineSkill({
+		slug: 'react',
+		color: 'cyan',
+		description:
+			'React is a JavaScript library for building user interfaces, maintained by Meta. It uses a component-based architecture and a virtual DOM to deliver fast, interactive web experiences.<br>\n' +
+			'<br>\n' +
+			'Key Features of React:<br>\n' +
+			'1. Component-Based – Build encapsulated components that manage their own state.<br>\n' +
+			'2. Virtual DOM – Efficient UI updates through diffing and reconciliation.<br>\n' +
+			'3. Declarative – Describe what the UI should look like; React handles updates.<br>\n' +
+			'4. Rich Ecosystem – Works with React Router, Redux, Next.js, and more.<br>\n' +
+			'5. Reusable Components – Share components across projects for consistent UIs.<br>',
+		logo: Assets.ReactJs,
+		name: 'React',
+		category: 'framework'
+	}),
+	defineSkill({
+		slug: 'celery',
+		color: 'green',
+		description:
+			'Celery is a distributed task queue for Python that handles asynchronous job processing and scheduled tasks. It integrates with brokers like Redis and RabbitMQ to offload work from the main request/response cycle.<br>\n' +
+			'<br>\n' +
+			'Key Features of Celery:<br>\n' +
+			'1. Async Task Processing – Offload long-running tasks from the web request path.<br>\n' +
+			'2. Scheduled Tasks – Run periodic jobs with Celery Beat.<br>\n' +
+			'3. Retry Mechanism – Automatically retry failed tasks with configurable back-off.<br>\n' +
+			'4. Scalable – Distribute tasks across multiple workers and machines.<br>\n' +
+			'5. Broker Agnostic – Works with Redis, RabbitMQ, and more.<br>',
+		logo: Assets.Celery,
+		name: 'Celery',
+		category: 'library'
+	}),
+	defineSkill({
+		slug: 'redis',
+		color: 'red',
+		description:
+			'Redis is an open-source, in-memory data store used as a cache, message broker, and database. Its sub-millisecond latency makes it ideal for session storage, queuing, and real-time data use cases.<br>\n' +
+			'<br>\n' +
+			'Key Features of Redis:<br>\n' +
+			'1. In-Memory Speed – Extremely fast reads and writes from RAM.<br>\n' +
+			'2. Versatile Data Structures – Supports strings, lists, sets, hashes, sorted sets, and more.<br>\n' +
+			'3. Pub/Sub Messaging – Built-in publish/subscribe for real-time communication.<br>\n' +
+			'4. Persistence Options – RDB snapshots and AOF logging for durability.<br>\n' +
+			'5. Celery & Django Integration – Widely used as a Celery broker and Django cache backend.<br>',
+		logo: Assets.Redis,
+		name: 'Redis',
+		category: 'db'
+	}),
+	defineSkill({
+		slug: 'stripe',
+		color: 'purple',
+		description:
+			'Stripe is a payments infrastructure platform that enables businesses to accept online payments, manage subscriptions, and handle complex financial flows via a developer-friendly API.<br>\n' +
+			'<br>\n' +
+			'Key Features of Stripe:<br>\n' +
+			'1. Payment Processing – Accept cards, wallets, and bank transfers globally.<br>\n' +
+			'2. Webhooks – React to payment events (success, failure, dispute) in real time.<br>\n' +
+			'3. Subscriptions & Billing – Built-in recurring billing and invoice management.<br>\n' +
+			'4. Fraud Prevention – Radar ML-based fraud detection out of the box.<br>\n' +
+			'5. Developer-Friendly – Clean REST API with SDKs for Python, Node, and more.<br>',
+		logo: Assets.Stripe,
+		name: 'Stripe',
+		category: 'library'
+	}),
+	defineSkill({
+		slug: 'twilio',
+		color: 'red',
+		description:
+			'Twilio is a cloud communications platform that provides APIs for SMS, voice, email, and more. It enables developers to embed real-time communication features directly into applications.<br>\n' +
+			'<br>\n' +
+			'Key Features of Twilio:<br>\n' +
+			'1. SMS & WhatsApp – Send and receive text messages programmatically.<br>\n' +
+			'2. Voice Calls – Build IVR systems and voice applications via API.<br>\n' +
+			'3. Two-Factor Auth – Simple OTP and verification workflows.<br>\n' +
+			'4. Global Reach – Communicate with users in 180+ countries.<br>\n' +
+			'5. Webhooks & Events – React to inbound messages and call status updates.<br>',
+		logo: Assets.Twilio,
+		name: 'Twilio',
+		category: 'library'
+	}),
 
 ] as const;
 

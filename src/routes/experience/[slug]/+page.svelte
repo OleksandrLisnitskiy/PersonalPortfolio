@@ -14,8 +14,18 @@
 	import Banner from '$lib/components/Banner/Banner.svelte';
 	import UIcon from '$lib/components/Icon/UIcon.svelte';
 	import CardDivider from '$lib/components/Card/CardDivider.svelte';
+	import Screenshot from '$lib/components/Screenshot/Screenshot.svelte';
 
 	export let data: { experience?: Experience };
+
+	const screenshots = data.experience?.screenshots ?? [];
+
+	let screenIndex: number | undefined = undefined;
+
+	$: screenshot =
+		typeof screenIndex !== 'undefined' && screenshots[screenIndex]
+			? screenshots[screenIndex]
+			: undefined;
 
 	$: computedTitle = data.experience ? `${data.experience.name} - ${title}` : title;
 </script>
@@ -86,7 +96,44 @@
 						</div>
 					{/if}
 				</div>
+				{#if screenshots.length > 0}
+					<div class="w-100% m-t-8">
+						<CardDivider />
+					</div>
+					<div class="px-10px grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 m-t-10">
+						{#each screenshots as item, index}
+							<!-- svelte-ignore a11y-no-static-element-interactions -->
+							<div
+								class="col-center gap-3 overflow-hidden w-100% h-100% rounded-10px"
+								on:click={() => (screenIndex = index)}
+								on:keydown
+								on:keypress
+								on:keyup
+							>
+								<div
+									class="screenshot aspect-video bg-contain w-100% cursor-pointer"
+									style={`background-image: url(${item.src});`}
+								/>
+								<p class="text-[var(--tertiary-text)] font-300">{item.label}</p>
+							</div>
+						{/each}
+					</div>
+				{/if}
 			</div>
 		</div>
 	{/if}
 </div>
+<Screenshot {screenshot} onClose={() => (screenIndex = undefined)} />
+
+<style lang="scss">
+	.screenshot {
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 100%;
+		transition: background-size 200ms;
+
+		&:hover {
+			background-size: 120%;
+		}
+	}
+</style>
