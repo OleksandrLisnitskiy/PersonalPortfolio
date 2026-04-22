@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.e347ffb1.js";import{g as t}from"./skills.0a27789d.js";const i=[{slug:"Booking Management System",color:"#0a9e07",description:`<div style="font-family: Arial, sans-serif; background: #f9f9f9; border-radius: 10px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 800px; margin: 20px auto;">
+import{A as e}from"./UIcon.054ccf66.js";import{g as t}from"./skills.5f72c4af.js";const i=[{slug:"Booking Management System",color:"#0a9e07",description:`<div style="font-family: Arial, sans-serif; background: #f9f9f9; border-radius: 10px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-width: 800px; margin: 20px auto;">
   <h2 style="color: #2c3e50;">🚀 Admin Dashboard & Booking Management System</h2>
   <p style="font-size: 1.05rem; color: #555;">
     This is a fully functional web application built with <strong>Flask</strong> 🐍 for managing client bookings, email campaigns, and admin operations for a service-based business.

@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.e347ffb1.js";import{g as n}from"./skills.0a27789d.js";import{C as t}from"./types.1ebf2f37.js";const r=[{slug:"full-stack-rentino",company:"Rentino",description:`<h2>Full-Stack Developer – Peer-to-Peer Rental Marketplace</h2>
+import{A as e}from"./UIcon.054ccf66.js";import{g as n}from"./skills.5f72c4af.js";import{C as t}from"./types.1ebf2f37.js";const r=[{slug:"full-stack-rentino",company:"Rentino",description:`<h2>Full-Stack Developer – Peer-to-Peer Rental Marketplace</h2>
 
 <p>
     <a href="https://rentino.org" target="_blank" rel="noopener noreferrer"><strong>Rentino</strong></a> is a peer-to-peer rental marketplace connecting owners and renters.
