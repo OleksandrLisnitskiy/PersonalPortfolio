@@ -9,7 +9,7 @@ export const items: Array<Education> = [
 		logo: Assets.UofA,
 		name: 'University of Alberta',
 		organization: 'UofA',
-		period: { from: new Date(2021, 9, 1), to: new Date(2025, 4, 31) },
+		period: { from: new Date(2021, 9, 1), to: new Date(2025, 3, 30) },
 		shortDescription: '',
 		slug: 'uofa',
 		subjects: ['Algorithms and Data structures', 'Calculus', 'Python', 'C++', 'Java', 'Databases', 'Software Engineering', 'Computer Architecture', 'Assembly']
