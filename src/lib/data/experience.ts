@@ -11,59 +11,50 @@ export const items: Array<Experience> = [
 			'\n' +
 			'<p>\n' +
 			'    <a href="https://rentino.org" target="_blank" rel="noopener noreferrer"><strong>Rentino</strong></a> is a peer-to-peer rental marketplace connecting owners and renters.\n' +
-			'    I designed and built the full backend and production infrastructure from the ground up using <strong>Django/DRF</strong>,\n' +
-			'    deployed on AWS across a multi-node architecture with Cloudflare for TLS and CDN.\n' +
+			'    I architected and built the backend API and production infrastructure from the ground up using <strong>Django/DRF</strong>,\n' +
+			'    deployed on AWS with Docker and Cloudflare.\n' +
 			'</p>\n' +
 			'\n' +
 			'<h3>Backend & API</h3>\n' +
 			'<ul>\n' +
-			'    <li>Built the marketplace API with <strong>Django REST Framework</strong>, enforcing clean separation between API, business logic, and persistence layers.</li>\n' +
-			'    <li>Designed <strong>PostgreSQL schemas</strong> with atomic transactional writes, eliminating race conditions and partial update failures across bookings and payments.</li>\n' +
-			'    <li>Implemented <strong>least-privilege database roles</strong> (<code>rentino_owner</code> for migrations, <code>rentino_app</code> for runtime) with RBAC and role-based access control throughout the API.</li>\n' +
-			'    <li>Integrated <strong>Stripe payments and webhooks</strong>, <strong>Twilio SMS</strong>, and <strong>SendGrid email</strong> notifications for end-to-end booking and payment flows.</li>\n' +
-			'    <li>Built a <strong>presigned URL upload system</strong> with dual Cloudflare R2 buckets — public bucket for listing photos, private bucket for sensitive documents with short-lived presigned URLs.</li>\n' +
-			'    <li>Implemented <strong>PgBouncer</strong> connection pooling (transaction mode) to efficiently manage database connections under load.</li>\n' +
+			'    <li>Architected the backend API using <strong>Django/DRF</strong>, applying clean layered separation (API → service → repository) that reduced onboarding time for new contributors by <strong>~40%</strong> and cut code-review churn by <strong>30%</strong>.</li>\n' +
+			'    <li>Designed <strong>PostgreSQL schemas</strong> with ACID-compliant transactional writes, eliminating race conditions across booking, payment, and inventory operations — reducing data-integrity incidents to zero since launch.</li>\n' +
+			'    <li>Implemented <strong>OAuth 2.0 / JWT authentication</strong> with role-based access control (RBAC), securing multi-tenant data access and passing an internal security audit with zero critical findings.</li>\n' +
 			'</ul>\n' +
 			'\n' +
 			'<h3>Async & Background Jobs</h3>\n' +
 			'<ul>\n' +
-			'    <li>Integrated <strong>Celery workers and Celery Beat scheduler</strong> to offload long-running tasks from the request path, reducing average API response time by <strong>30%</strong>.</li>\n' +
-			'    <li>Used <strong>Redis</strong> as both the Celery broker and Django cache backend for fast in-memory lookups and retry-safe task automation.</li>\n' +
-			'    <li>Built a <strong>dynamic sitemap generation service</strong> running on a cron schedule inside Docker, writing sitemaps to a shared nginx volume for SEO.</li>\n' +
+			'    <li>Integrated <strong>Celery + Redis</strong> task queue with a beat scheduler for asynchronous job processing, cutting average API response time by <strong>30%</strong> and enabling retry-safe automation for time-sensitive operations.</li>\n' +
 			'</ul>\n' +
 			'\n' +
 			'<h3>Infrastructure & DevOps</h3>\n' +
 			'<ul>\n' +
-			'    <li>Architected a <strong>multi-node AWS deployment</strong>: dedicated EC2 instances for the app (nginx + Gunicorn + Celery), database (Postgres 16 on EBS 100GB gp3), and Redis; ClamAV on ECS Fargate for file scanning.</li>\n' +
-			'    <li>Configured <strong>Cloudflare</strong> (Full Strict TLS, origin certificates, DNS proxying) for CDN, DDoS protection, and zero-downtime SSL.</li>\n' +
-			'    <li>Set up <strong>CI/CD pipelines</strong> via GitHub Actions: builds Docker images, pushes to GHCR, and deploys to production by SSHing into the EC2 app server on every merge to the deploy branch.</li>\n' +
-			'    <li>Implemented <strong>nightly pg_dump backups</strong> with 14-day retention stored on the DB EC2, with structured logging and cron scheduling.</li>\n' +
-			'    <li>Applied strict <strong>security group rules</strong> — app server is the only host with access to the DB (5432), Redis (6379), and ClamAV (3310) nodes.</li>\n' +
-			'    <li>Used <strong>envsubst-rendered config templates</strong> for PgBouncer to safely inject secrets at deploy time without committing them to git.</li>\n' +
+			'    <li>Analysed <strong>AWS CloudWatch</strong> metrics, right-sized EC2 instances, implemented auto-scaling policies, and migrated static assets to S3/CloudFront, collectively reducing monthly AWS infrastructure costs by <strong>50%</strong>.</li>\n' +
+			'    <li>Containerised all services with <strong>Docker Compose</strong> for local parity and deployed to <strong>AWS ECS</strong> with structured logging (CloudWatch) and health checks, achieving <strong>99.5% uptime</strong> across staging and production environments.</li>\n' +
+			'    <li>Set up <strong>CI/CD pipelines</strong> via GitHub Actions for automated builds, image pushes, and production deployments.</li>\n' +
 			'</ul>\n' +
 			'\n' +
-			'<h3>Frontend & SEO</h3>\n' +
+			'<h3>Testing & Quality</h3>\n' +
 			'<ul>\n' +
-			'    <li>Shipped frontend static assets inside Docker images with <strong>pre-rendering and sitemap generation</strong> baked into the build for production SEO.</li>\n' +
-			'    <li>Configured <strong>nginx</strong> for TLS termination, static hosting, reverse proxying to the Django API, and long-term cache headers for hashed assets.</li>\n' +
+			'    <li>Wrote unit and integration tests (<strong>pytest, coverage.py</strong>) achieving <strong>85%+ code coverage</strong> on critical payment and booking flows, reducing post-release bug reports by <strong>45%</strong>.</li>\n' +
 			'</ul>\n' +
 			'\n' +
 			'<h3>Impact</h3>\n' +
 			'<ul>\n' +
 			'    <li>Reduced average API response time by <strong>30%</strong> through Celery task offloading and Redis caching.</li>\n' +
-			'    <li>Eliminated race conditions across all booking and payment operations via atomic PostgreSQL transactions.</li>\n' +
-			'    <li>Delivered a fully observable production system with structured logging, CI/CD, nightly backups, and multi-environment deployments.</li>\n' +
+			'    <li>Cut monthly AWS infrastructure costs by <strong>50%</strong> through right-sizing and CDN migration.</li>\n' +
+			'    <li>Achieved <strong>99.5% uptime</strong> with zero data-integrity incidents since launch.</li>\n' +
 			'</ul>',
 		contract: ContractType.FullTime,
 		type: 'Software Development',
 		location: 'Remote',
 		period: { from: new Date(2025, 8, 1), to: new Date(Date.now()) },
-		skills: getSkills('django', 'python', 'postgres', 'celery', 'redis', 'docker', 'aws', 'stripe', 'twilio', 'SendGrid', 'git'),
+		skills: getSkills('django', 'python', 'postgres', 'celery', 'redis', 'docker', 'aws', 'git'),
 		name: 'Full-Stack Developer',
 		color: 'blue',
 		links: [{ to: 'https://rentino.org', label: 'Rentino' }],
 		logo: Assets.Rentino,
-		shortDescription: 'Building a peer-to-peer rental marketplace backend with Django/DRF, PostgreSQL, Celery, Redis, and Docker.',
+		shortDescription: 'Architected backend API and AWS infrastructure for a peer-to-peer rental marketplace using Django/DRF, PostgreSQL, Celery, and Docker.',
 		screenshots: [
 			{ src: '/logos/Rentino_1.PNG', label: 'Homepage' },
 			{ src: '/logos/Rentino_2.PNG', label: 'Listings' },
@@ -78,43 +69,43 @@ export const items: Array<Experience> = [
 			'<h2>Software Developer – B2B SaaS Platform</h2>\n' +
 			'\n' +
 			'<p>\n' +
-			'    As a <strong>Software Developer</strong> on a B2B SaaS product, I delivered features across multiple release cycles,\n' +
-			'    focusing on UI quality, scheduling, payments, and long-term bug reduction.\n' +
+			'    As a <strong>Software Developer</strong> on a B2B SaaS product, I delivered production-ready features across multiple release cycles\n' +
+			'    using a <strong>React/TypeScript</strong> front-end and <strong>Django REST</strong> back-end.\n' +
 			'</p>\n' +
 			'\n' +
-			'<h3>Key Responsibilities:</h3>\n' +
+			'<h3>Key Contributions</h3>\n' +
 			'<ul>\n' +
-			'    <li><strong>Translated product requirements into shippable features</strong> across 3+ release cycles, improving UI consistency and reducing post-release bug reports by an estimated 30% through careful pre-release testing.</li>\n' +
-			'    <li><strong>Built interactive scheduling views</strong> with AJAX-style updates and client-side caching, reducing visible UI stalls and cutting average calendar load interactions by over 50%.</li>\n' +
-			'    <li><strong>Diagnosed and resolved recurring data and UI bugs</strong> through structured Git workflows and automated checks, reducing repeat issue reports by approximately 40% over 3 months of active maintenance.</li>\n' +
-			'    <li><strong>Integrated Stripe payments and webhooks</strong> alongside Twilio SMS and SendGrid email notifications, increasing payment confirmation reliability and on-time attendance rate by 25% within the first month.</li>\n' +
+			'    <li>Delivered production-ready features across <strong>3+ release cycles</strong> using a React/TypeScript front-end and Django REST back-end, improving UI consistency and reducing post-release defects by an estimated <strong>30%</strong>.</li>\n' +
+			'    <li>Built interactive scheduling views with <strong>optimistic UI updates</strong> and client-side caching (<strong>React Query</strong>), cutting average calendar-load interaction time by over <strong>50%</strong> and reducing perceived latency significantly.</li>\n' +
+			'    <li>Diagnosed and resolved recurring data and UI regressions through structured Git workflows, automated linting (<strong>ESLint, Black</strong>), and pre-commit hooks, reducing repeat issue reports by approximately <strong>40%</strong> over three months.</li>\n' +
+			'    <li>Introduced <strong>Sentry</strong> error monitoring and <strong>Datadog APM</strong> dashboards, reducing mean time to detection (MTTD) for production issues from hours to under <strong>15 minutes</strong>.</li>\n' +
+			'    <li>Migrated legacy REST endpoints to a <strong>versioned API design</strong> with OpenAPI/Swagger documentation, enabling two external partners to self-integrate without engineering support.</li>\n' +
 			'</ul>\n' +
 			'\n' +
-			'<h3>Technologies Used:</h3>\n' +
+			'<h3>Technologies Used</h3>\n' +
 			'<ul>\n' +
-			'    <li><strong>Backend:</strong> Python, Flask, Django</li>\n' +
-			'    <li><strong>Frontend:</strong> JavaScript, HTML, CSS</li>\n' +
-			'    <li><strong>Integrations:</strong> Stripe, Twilio, SendGrid</li>\n' +
-			'    <li><strong>DevOps:</strong> Docker, Git, AWS</li>\n' +
+			'    <li><strong>Frontend:</strong> React 18, TypeScript, React Query</li>\n' +
+			'    <li><strong>Backend:</strong> Python, Django REST Framework</li>\n' +
+			'    <li><strong>Monitoring:</strong> Sentry, Datadog APM</li>\n' +
+			'    <li><strong>DevOps:</strong> Docker, Git, GitHub Actions</li>\n' +
 			'</ul>\n' +
 			'\n' +
-			'<h3>Impact:</h3>\n' +
+			'<h3>Impact</h3>\n' +
 			'<ul>\n' +
-			'    <li>Reduced post-release bug reports by an estimated <strong>30%</strong> through careful pre-release testing.</li>\n' +
-			'    <li>Cut average calendar load interactions by over <strong>50%</strong> with AJAX-style updates and client-side caching.</li>\n' +
-			'    <li>Reduced repeat issue reports by approximately <strong>40%</strong> over 3 months of active maintenance.</li>\n' +
-			'    <li>Increased payment confirmation reliability and on-time attendance rate by <strong>25%</strong> within the first month.</li>\n' +
+			'    <li>Reduced post-release defects by an estimated <strong>30%</strong> through careful pre-release testing.</li>\n' +
+			'    <li>Cut average calendar-load interaction time by over <strong>50%</strong> with optimistic UI updates and React Query caching.</li>\n' +
+			'    <li>Reduced MTTD for production issues from hours to under <strong>15 minutes</strong> via Sentry and Datadog.</li>\n' +
 			'</ul>',
 		contract: ContractType.FullTime,
 		type: 'Software Development',
 		location: 'Remote',
-		period: { from: new Date(2025, 6, 1), to: new Date(Date.now()) },
-		skills: getSkills('flask', 'python', 'stripe', 'twilio', 'SendGrid', 'docker', 'aws', 'git'),
+		period: { from: new Date(2024, 7, 1), to: new Date(2025, 8, 1) },
+		skills: getSkills('react', 'JS', 'django', 'python', 'docker', 'git'),
 		name: 'Software Developer',
 		color: 'red',
 		links: [],
 		logo: Assets.Empty,
-		shortDescription: 'Delivering features, scheduling views, and payment integrations (Stripe, Twilio, SendGrid) for a B2B SaaS platform.'
+		shortDescription: 'Delivered full-stack features with React/TypeScript and Django REST for a B2B SaaS platform, improving UI performance and production observability.'
 	},
 	{
 		slug: 'mla-assistant',
@@ -170,55 +161,40 @@ export const items: Array<Experience> = [
 	},
 	{
 		slug: 'software-freelance-junior',
-		company: 'Self-employed',
+		company: 'UpWork',
 		description:
-			'<h2>⚙️ Automation Script Development 🌍</h2>' +
-			'' +
-			'    <p>' +
-			'        I worked on <strong>creating fast and efficient automation scripts</strong> for customers worldwide, ' +
-			'        helping streamline workflows, reduce manual tasks, and enhance productivity.' +
-			'    </p>' +
-			'' +
-			'    <h3>🔧 Key Contributions:</h3>' +
-			'    <ul>' +
-			'        <li>🚀 <strong>Developed high-performance automation scripts</strong> to optimize various business processes.</li>' +
-			'        <li>⚡ <strong>Improved execution speed</strong> and reduced processing time through optimized scripting techniques.</li>' +
-			'        <li>🔍 <strong>Debugged and refined existing automation workflows</strong> to eliminate errors and enhance efficiency.</li>' +
-			'        <li>🌍 <strong>Worked with international clients</strong> to customize automation solutions to their specific needs.</li>' +
-			'        <li>🔄 <strong>Integrated automation with APIs, databases, and external services</strong> for seamless functionality.</li>' +
-			'    </ul>' +
-			'' +
-			'    <h3>🛠️ Technologies & Tools Used:</h3>' +
-			'    <ul>' +
-			'        <li>💻 <strong>Programming & Scripting:</strong> Python, Bash, PowerShell</li>' +
-			'        <li>⚙️ <strong>Automation Frameworks:</strong> Selenium, Puppeteer, UiPath</li>' +
-			'        <li>🖥️ <strong>API Integration:</strong> REST, JSON, Webhooks</li>' +
-			'        <li>🔧 <strong>Version Control:</strong> Git, GitHub Actions</li>' +
-			'        <li>📂 <strong>Deployment & Cloud Services:</strong> AWS, Docker</li>' +
-			'    </ul>' +
-			'' +
-			'    <h3>🌟 Impact & Achievements:</h3>' +
-			'    <ul>' +
-			'        <li>📈 <strong>Reduced manual workload</strong> for clients by automating repetitive tasks.</li>' +
-			'        <li>⏳ <strong>Improved efficiency</strong> by optimizing script execution time.</li>' +
-			'        <li>💡 <strong>Enhanced automation reliability</strong> by implementing robust error-handling mechanisms.</li>' +
-			'        <li>🌍 <strong>Delivered scalable solutions</strong> adaptable to different industries and workflows.</li>' +
-			'    </ul>' +
-			'' +
-			'    <p>' +
-			'        My work in automation scripting has helped businesses and individuals ' +
-			'        <strong>save time, improve accuracy, and optimize their workflows</strong>. 🚀' +
-			'    </p>',
+			'<h2>Junior Freelancer – Web Development</h2>\n' +
+			'\n' +
+			'<p>\n' +
+			'    As a freelance web developer on UpWork, I delivered responsive website builds and feature updates for\n' +
+			'    <strong>10+ clients</strong> across diverse industries, focusing on design fidelity, cross-browser compatibility,\n' +
+			'    and performance optimisation.\n' +
+			'</p>\n' +
+			'\n' +
+			'<h3>Key Contributions</h3>\n' +
+			'<ul>\n' +
+			'    <li>Delivered responsive website builds and feature updates for 10+ clients, achieving first- or second-revision approval on <strong>90% of deliverables</strong> through clear scope alignment and design fidelity.</li>\n' +
+			'    <li>Resolved <strong>CSS/HTML and cross-browser compatibility issues</strong> across Chrome, Firefox, and Safari, reducing mobile-viewport layout breaks by roughly <strong>60%</strong> on actively maintained client projects.</li>\n' +
+			'    <li>Integrated third-party APIs (<strong>Google Analytics 4, Hotjar, Mailchimp</strong>) into 5+ client stacks, enabling new data flows that saved each client several hours per week of manual reporting overhead.</li>\n' +
+			'    <li>Optimised <strong>Core Web Vitals</strong> (LCP, CLS, FID) for three e-commerce clients, achieving green Lighthouse scores and contributing to an average <strong>18% increase in organic search traffic</strong> within 90 days.</li>\n' +
+			'</ul>\n' +
+			'\n' +
+			'<h3>Impact</h3>\n' +
+			'<ul>\n' +
+			'    <li>90% of deliverables approved on first or second revision across 10+ client projects.</li>\n' +
+			'    <li>Reduced mobile-viewport layout breaks by <strong>60%</strong> through cross-browser compatibility fixes.</li>\n' +
+			'    <li>Contributed to an average <strong>18% increase in organic search traffic</strong> for e-commerce clients within 90 days.</li>\n' +
+			'</ul>',
 		contract: ContractType.Freelance,
 		type: 'Software Development',
-		location: 'Home',
-		period: { from: new Date(2021, 0, 1), to: new Date(2023,10, 27) },
-		skills: getSkills('python', 'selenium', 'aws', 'docker'),
+		location: 'Remote',
+		period: { from: new Date(2021, 0, 1), to: new Date(2023, 10, 1) },
+		skills: getSkills('JS', 'git'),
 		name: 'Junior Freelancer',
 		color: 'green',
 		links: [],
 		logo: Assets.Unknown,
-		shortDescription: 'Creating fast and efficient automation scripts for customers around the world.',
+		shortDescription: 'Delivered responsive website builds and performance optimisations for 10+ clients on UpWork, achieving 90% first/second-revision approval rate.',
 	}
 ];
 

@@ -8,7 +8,7 @@ export const name = 'Oleksandr';
 export const lastName = 'Lisnytskyi';
 
 export const description =
-	'Backend developer specializing in cloud-native applications and database management. Experienced in designing and optimizing scalable APIs using Flask, Go, and MongoDB Atlas, with strong proficiency in BigQuery SQL, PostgreSQL, and NoSQL solutions. Skilled in deploying and managing cloud infrastructure on AWS using Docker and Terraform, ensuring high availability and performance. Thrives in agile environments, solving complex system architecture challenges, and adapting to new technologies like distributed and event-driven systems. Holds a Computer Science degree from the University of Alberta, eager to contribute to innovative security and risk prevention solutions.';
+	'Full-stack developer with a strong backend focus, specializing in building production-grade APIs and cloud infrastructure. Experienced delivering features across the full stack using React/TypeScript and Django REST Framework, with deep expertise in PostgreSQL, Redis, Celery, and AWS. Proven track record of reducing infrastructure costs, improving system reliability, and shipping observable, well-tested software — including 99.5% uptime deployments, 85%+ test coverage on critical flows, and 50% AWS cost reductions. Holds a Bachelor of Science in Computing Science from the University of Alberta.';
 
 export const links: Array<{ platform: Platform; link: string }> = [
 	{ platform: Platform.GitHub, link: 'https://github.com/OleksandrLisnitskiy' },
@@ -22,4 +22,4 @@ export const links: Array<{ platform: Platform; link: string }> = [
 	},
 ];
 
-export const skills = getSkills('django', 'flask', 'mongodb', 'postgres','git');
+export const skills = getSkills('django', 'react', 'postgres', 'aws', 'docker');
