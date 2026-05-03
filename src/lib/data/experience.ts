@@ -100,7 +100,7 @@ export const items: Array<Experience> = [
 		type: 'Software Development',
 		location: 'Remote',
 		period: { from: new Date(2024, 7, 1), to: new Date(2025, 8, 1) },
-		skills: getSkills('react', 'JS', 'django', 'python', 'docker', 'git'),
+		skills: getSkills('react', 'ts', 'react-query', 'JS', 'django', 'python', 'docker', 'git', 'sentry', 'datadog'),
 		name: 'Software Developer',
 		color: 'red',
 		links: [],
@@ -111,48 +111,31 @@ export const items: Array<Experience> = [
 		slug: 'mla-assistant',
 		company: 'Legislative Assembly of Alberta',
 		description:
-			'<h2>🏛️ MLA Assistant – Government Administration Support 📜</h2>' +
-			'' +
-			'    <p>' +
-			'        As an <strong>MLA Assistant</strong>, I provided administrative and logistical support to a Member of the Legislative Assembly (MLA), ' +
-			'        ensuring smooth operations, effective communication, and efficient handling of governmental responsibilities.' +
-			'    </p>' +
-			'' +
-			'    <h3>🔧 Key Responsibilities:</h3>' +
-			'    <ul>' +
-			'        <li>📑 <strong>Administrative Support:</strong> Managed schedules, correspondence, and documentation for the MLA.</li>' +
-			'        <li>📢 <strong>Public Relations:</strong> Assisted in handling constituent inquiries, complaints, and service requests.</li>' +
-			'        <li>📝 <strong>Legislative Research:</strong> Conducted research on policies, bills, and government initiatives.</li>' +
-			'        <li>🤝 <strong>Community Engagement:</strong> Coordinated meetings, events, and public outreach programs.</li>' +
-			'        <li>🏛️ <strong>Government Liaison:</strong> Communicated with various government departments and officials.</li>' +
-			'    </ul>' +
-			'' +
-			'    <h3>🛠️ Skills & Tools Used:</h3>' +
-			'    <ul>' +
-			'        <li>💻 <strong>Office & Documentation:</strong> MS Office, Google Docs, spreadsheets.</li>' +
-			'        <li>📞 <strong>Communication & Public Relations:</strong> Email drafting, public speaking, official correspondence.</li>' +
-			'        <li>🔍 <strong>Policy & Legislative Research:</strong> Analyzing bills, government reports, and legal documents.</li>' +
-			'        <li>📊 <strong>Data & Case Management:</strong> Tracking constituent concerns and follow-ups.</li>' +
-			'        <li>🗓️ <strong>Event Coordination:</strong> Organizing press conferences, public meetings, and constituency visits.</li>' +
-			'    </ul>' +
-			'' +
-			'    <h3>🌟 Impact & Achievements:</h3>' +
-			'    <ul>' +
-			'        <li>✅ <strong>Streamlined administrative processes</strong> to improve office efficiency.</li>' +
-			'        <li>📈 <strong>Enhanced constituent services</strong> by promptly addressing community concerns.</li>' +
-			'        <li>🤝 <strong>Strengthened public engagement</strong> by organizing community meetings and events.</li>' +
-			'        <li>🏛️ <strong>Supported policy initiatives</strong> through research and documentation.</li>' +
-			'    </ul>' +
-			'' +
-			'    <p>' +
-			'        Through my role as an MLA Assistant, I contributed to <strong>efficient governance, policy research, and community engagement</strong>, ' +
-			'        ensuring effective communication between the government and the public. 🚀' +
-			'    </p>',
+			'<h2>MLA Assistant – Government Administration Support</h2>' +
+			'<p>' +
+			'    As an <strong>MLA Assistant</strong>, I provided administrative and logistical support to a Member of the Legislative Assembly (MLA), ' +
+			'    ensuring smooth operations, effective communication, and efficient handling of governmental responsibilities.' +
+			'</p>' +
+			'<h3>Key Responsibilities</h3>' +
+			'<ul>' +
+			'    <li><strong>Administrative Support:</strong> Managed schedules, correspondence, and documentation for the MLA.</li>' +
+			'    <li><strong>Public Relations:</strong> Assisted in handling constituent inquiries, complaints, and service requests.</li>' +
+			'    <li><strong>Legislative Research:</strong> Conducted research on policies, bills, and government initiatives.</li>' +
+			'    <li><strong>Community Engagement:</strong> Coordinated meetings, events, and public outreach programs.</li>' +
+			'    <li><strong>Government Liaison:</strong> Communicated with various government departments and officials.</li>' +
+			'</ul>' +
+			'<h3>Impact</h3>' +
+			'<ul>' +
+			'    <li><strong>Streamlined administrative processes</strong> to improve office efficiency.</li>' +
+			'    <li><strong>Enhanced constituent services</strong> by promptly addressing community concerns.</li>' +
+			'    <li><strong>Strengthened public engagement</strong> by organizing community meetings and events.</li>' +
+			'    <li><strong>Supported policy initiatives</strong> through research and documentation.</li>' +
+			'</ul>',
 		contract: ContractType.FullTime,
 		type: 'MLA Assistance',
 		location: 'Camrose, AB, Canada',
-		period: { from: new Date(2024, 9, 1), to: new Date(Date.now())},
-		skills: getSkills('svelte', 'ts', 'sass', 'css', 'html', 'js'),
+		period: { from: new Date(2024, 9, 1), to: new Date(Date.now()) },
+		skills: getSkills('JS'),
 		name: 'MLA Assistant',
 		color: 'blue',
 		links: [],
